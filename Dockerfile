@@ -1,5 +1,5 @@
 # Dockerfile for lighttpd
-FROM intellisrc/alpine:3.14
+FROM intellisrc/alpine:3.24
 
 RUN apk add --no-cache openssh && \
     rm -rf /var/cache/apk/*
@@ -7,8 +7,8 @@ RUN apk add --no-cache openssh && \
 EXPOSE 22
 
 # Set user password
-ENV USER alpine
-ENV PASSWORD default
+ENV USER=alpine
+ENV PASSWORD=default
 COPY start.sh /usr/local/bin/start.sh
 VOLUME /home/
 
